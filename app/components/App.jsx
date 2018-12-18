@@ -62,36 +62,50 @@ const firstNameArray = Object.values(firstName);
 const lastNameArray = Object.values(lastName);
 
 const generatedName = function() {
-  return firstNameArray[Math.floor(Math.random() * 26)] + " " + lastNameArray[Math.floor(Math.random() * 26)];
+  this.setState(firstNameArray[Math.floor(Math.random() * 26)] + " " + lastNameArray[Math.floor(Math.random() * 26)];
 }
 
-class Button extends React.Component {
-  constructor(props) {
-    super(props);
-    this.onClick = this.onClick.bind(this);
-  }
+// class Name extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.handleClick = this.handleClick.bind(this);
+//     this.state = {
+//       name: generatedName()
+//     }
+//   }
   
-  onClick() {
-    this.setState({
-      name: generatedName()
-    });
-  }
-  
-  render() {
-    return <Button onClick={this.onClick}></Button>
-  }
-}
+//   handleClick() {
+//     this.setState
+//   }
+// }
 
-/* the main page for the index route of this app */
-const App = function() {
-  return (
-    <div>
-      <h1>{this.generatedName}</h1>
+// class Button extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.onClick = this.onClick.bind(this);
+//   }
+  
+//   onClick() {
+//     this.setState({
+//       name: generatedName()
+//     });
+//   }
+  
+//   render() {
+//     return <Button onClick={this.onClick}></Button>
+//   }
+// }
+
+// /* the main page for the index route of this app */
+// const App = function() {
+//   return (
+//     <div>
+//       <h1>{this.generatedName}</h1>
       
-      <Button onClick={generatedName}>Another one!</Button>
+//       <Button onClick={generatedName}>Another one!</Button>
       
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
 module.exports = App;
