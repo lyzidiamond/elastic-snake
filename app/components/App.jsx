@@ -58,46 +58,16 @@ const lastName = {
   "z": "Candygram"
 };
 
-const findName = function(first, last) {
-  if (!first || !last || first.length === 0 || last.length === 0) {
-    return "[pssst, we need a first and last name]";
-  }
-  
-  const bcFirst = firstName[first[0].toLowerCase()];
-  const bcLast = lastName[last[0].toLowerCase()];
-  
-  return bcFirst + " " + bcLast;
-}
+const firstNameArray = Object.values(firstName);
+const lastNameArray = Object.values(lastName);
 
+const generatedName = firstNameArray[Math.floor(Math.random() * 26)] + " " + lastNameArray[Math.floor(Math.random() * 26)];
+
+/* the main page for the index route of this app */
 const App = function() {
   return (
     <div>
-      <h1>
-        What's your Benedict Cumberbatch name?
-      </h1>
-    </div>
-  
-}
-
-const dependenciesArray = [
-  'express - middleware for the node server',
-  'react - for generating the views of the app',
-  'react-dom - powers the rendering of elements to the DOM, typically paired with React',
-  'webpack - for bundling all the javascript',
-  'webpack-cli - command line support for webpack',
-  'jsx-loader - allows webpack to load jsx files'
-];
-
-const componentsMade = [
-  'HelloWorld - which is the view you are seeing now!',
-  'UnorderedList - which takes an array of "items" and returns a <ul> element with <li>, elements of each of those items within it',
-];
-
-/* the main page for the index route of this app */
-const HelloWorld = function() {
-  return (
-    <div>
-      <h1>Hello World!</h1>
+      <h2>Your Benedict Cumberbatch name is</h2>
 
       <p>This is a starter <a href="http://glitch.com">Glitch</a> app for React! It uses 
         only a few dependencies to get you started on working with React:</p>
