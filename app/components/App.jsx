@@ -61,7 +61,9 @@ const lastName = {
 const firstNameArray = Object.values(firstName);
 const lastNameArray = Object.values(lastName);
 
-const generatedName = firstNameArray[Math.floor(Math.random() * 26)] + " " + lastNameArray[Math.floor(Math.random() * 26)];
+const generatedName = function() {
+  return firstNameArray[Math.floor(Math.random() * 26)] + " " + lastNameArray[Math.floor(Math.random() * 26)];
+}
 
 /* the main page for the index route of this app */
 const App = function() {
@@ -69,7 +71,10 @@ const App = function() {
     <div>
       <h2>Your Benedict Cumberbatch name is</h2>
 
-      <h1>{generatedName}</h1>
+      <h1>{generatedName()}</h1>
+      
+      <button onClick={this.generatedName}>Another one!</button>
+      
     </div>
   );
 }
