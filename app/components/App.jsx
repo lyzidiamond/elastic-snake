@@ -73,8 +73,12 @@ class Button extends React.Component {
   
   onClick() {
     this.setState({
-      
-    })
+      name: generatedName()
+    });
+  }
+  
+  render() {
+    return <Button onClick={this.onClick}></Button>
   }
 }
 
@@ -82,9 +86,9 @@ class Button extends React.Component {
 const App = function() {
   return (
     <div>
-      <h1>{generatedName()}</h1>
+      <h1>{this.generatedName}</h1>
       
-      <button onClick={this.generatedName}>Another one!</button>
+      <Button onClick={generatedName}>Another one!</Button>
       
     </div>
   );
