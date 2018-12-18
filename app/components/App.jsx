@@ -65,12 +65,23 @@ const generatedName = function() {
   return firstNameArray[Math.floor(Math.random() * 26)] + " " + lastNameArray[Math.floor(Math.random() * 26)];
 }
 
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
+  
+  onClick() {
+    this.setState({
+      
+    })
+  }
+}
+
 /* the main page for the index route of this app */
 const App = function() {
   return (
     <div>
-      <h2>Your Benedict Cumberbatch name is</h2>
-
       <h1>{generatedName()}</h1>
       
       <button onClick={this.generatedName}>Another one!</button>
