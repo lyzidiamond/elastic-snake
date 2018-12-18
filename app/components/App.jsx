@@ -62,12 +62,12 @@ const firstNameArray = Object.values(firstName);
 const lastNameArray = Object.values(lastName);
 
 const generatedName = function() {
-  this.setState({
+  return {
     name: firstNameArray[Math.floor(Math.random() * 26)] + " " + lastNameArray[Math.floor(Math.random() * 26)]
-  });
+  };
 }
 
-class Name extends React.Component {
+const App = class Name extends React.Component {
   constructor(props) {
     super(props);
     this.state = generatedName();
@@ -75,61 +75,17 @@ class Name extends React.Component {
   }
   
   handler() {
-    generatedName();
+    this.setState(generatedName());
   }
   
-  
+  render() {
+    return (
+      <div>
+        <h1>{this.state.name}</h1>
+        <button onClick={this.handler}>Another one!</button>
+      </div>
+    )
+  }
 }
-
-const App = function() {
-  return (
-    <div>
-      <h1></h1>
-    </div>
-  )
-}
-
-// class Name extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.handleClick = this.handleClick.bind(this);
-//     this.state = {
-//       name: generatedName()
-//     }
-//   }
-  
-//   handleClick() {
-//     this.setState
-//   }
-// }
-
-// class Button extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.onClick = this.onClick.bind(this);
-//   }
-  
-//   onClick() {
-//     this.setState({
-//       name: generatedName()
-//     });
-//   }
-  
-//   render() {
-//     return <Button onClick={this.onClick}></Button>
-//   }
-// }
-
-// /* the main page for the index route of this app */
-// const App = function() {
-//   return (
-//     <div>
-//       <h1>{this.generatedName}</h1>
-      
-//       <Button onClick={generatedName}>Another one!</Button>
-      
-//     </div>
-//   );
-// }
 
 module.exports = App;
