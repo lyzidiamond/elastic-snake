@@ -62,7 +62,31 @@ const firstNameArray = Object.values(firstName);
 const lastNameArray = Object.values(lastName);
 
 const generatedName = function() {
-  this.setState(firstNameArray[Math.floor(Math.random() * 26)] + " " + lastNameArray[Math.floor(Math.random() * 26)];
+  this.setState({
+    name: firstNameArray[Math.floor(Math.random() * 26)] + " " + lastNameArray[Math.floor(Math.random() * 26)]
+  });
+}
+
+class Name extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = generatedName();
+    this.handler = this.handler.bind(this);
+  }
+  
+  handler() {
+    generatedName();
+  }
+  
+  
+}
+
+const App = function() {
+  return (
+    <div>
+      <h1></h1>
+    </div>
+  )
 }
 
 // class Name extends React.Component {
